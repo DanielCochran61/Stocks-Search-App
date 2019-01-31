@@ -1,12 +1,19 @@
-#stock-buttons {
-    float: left;
+h1 {
+    text-align: center;
 
-    
 }
-
 
 #stock-form {
     float: right;
 
+}
 
+#add-stock {
+    background-color: lightskyblue;
+
+}
+
+#stocks-view {
+    background-color: lightgray;
+    
 }

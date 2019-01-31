@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+      <h1>Stock Search</h1>
+  
+      <div id="stocks-view"></div>
+  
+      <div id="buttons-view"></div>
 
-    <div id="stock-buttons">
-        <button id="TACO" value="TACO"></button>
-        <button id="TSLA" value="TSLA"></button>
-        <button id="RGR" value="RGR"></button>
-        <button id="LOGI" value="LOGI"></button>
-
-    </div>
-
-    <form id="stock-form">
+      <form id="stock-form">
         <label for="stock-input">Add a Stock Symbol</label>
-        <input type="text" id="stock-input"><br>
-        <input id="add-stock" type="submit" value="Submit">
-    </form>
- 
-    <script src="app.js"></script>   
-</body>
+        <input type="text" id="stock-input">
+        <br>
+        <input id="add-stock" type="submit" value="Add">
+      </form>
+  
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="app.js"></script>
+    </div>
+  </body>
 </html>
