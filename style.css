@@ -1,8 +1,14 @@
 h1 {
     text-align: center;
+    text-decoration: underline;
+    text-decoration-style: double;
 
 }
 
+body {
+    background-color: lightgray;
+
+}
 #stock-form {
     float: right;
 
@@ -14,6 +20,6 @@ h1 {
 }
 
 #stocks-view {
-    background-color: lightgray;
+    background-color: #ffffff;
     
 }

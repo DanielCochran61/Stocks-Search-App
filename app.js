@@ -1,5 +1,4 @@
-const stocks = ['TACO', 'TSLA', 'RGR', 'LOGI'];
-
+const stocksList = ['TACO', 'TSLA', 'RGR', 'LOGI'];
 const displayStockInfo = function () {
     const stock = $(this).attr('data-name');
     const queryURL = `https://api.iextrading.com/1.0/stock/${stock}/batch?types=quote,news&range=1m&last=1`;
@@ -12,17 +11,22 @@ const displayStockInfo = function () {
         const stockDiv = $('<div>').addClass('stock');
         const companyName = response.quote.companyName;
         const nameHolder = $('<p>').text(`Company Name: ${companyName}`);
-
         stockDiv.append(nameHolder);
 
         const stockSymbol = response.quote.symbol;
         const symbolHolder = $('<p>').text(`Stock Symbol: ${stockSymbol}`);
-
         stockDiv.append(symbolHolder);
+
+
+
+   //     const stockLogo = response.logo;
+   //     const logoHolder = $('<p>').text(`Stock Logo: ${stockLogo}`);
+   //     stockDiv.append(logoHolder);
+
+
 
         const stockPrice = response.quote.latestPrice;
         const priceHolder = $('<p>').text(`Stock Price: $${stockPrice}`);
-
         stockDiv.append(priceHolder);
 
         const companyNews = response.news[0].summary;
@@ -37,11 +41,11 @@ const render = function () {
 
     $('#buttons-view').empty();
 
-    for (let i = 0; i < stocks.length; i++) {
+    for (let i = 0; i < stocksList.length; i++) {
         const newButton = $('<button>');
         newButton.addClass('stock-btn');
-        newButton.attr('data-name', stocks[i]);
-        newButton.text(stocks[i]);
+        newButton.attr('data-name', stocksList[i]);
+        newButton.text(stocksList[i]);
 
         $('#buttons-view').append(newButton);
     }
@@ -50,7 +54,7 @@ const render = function () {
 const addButton = function (event) {
     event.preventDefault();
     const stock = $('#stock-input').val().trim();
-    stocks.push(stock);
+    stocksList.push(stock);
     $('#stock-input').val('');
     render();
 }
